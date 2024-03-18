@@ -1,0 +1,561 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+body{
+  position: relative;
+  height: 100vh;
+  width: 410px;  
+  left: 50vw;
+  /* right: -5vw; */
+  transform: translate(-50%);
+
+  /* background: linear-gradient(-45deg, red, green, blue, rgb(172, 172, 1)); */
+  background: linear-gradient(180deg, rgb(255, 255, 255),hsl(241, 62%, 25%));
+  /* background: linear-gradient(to top,rgb(0, 0, 0),rgb(13, 21, 74),rgb(255, 255, 255));  */
+ /* background-color: rgb(76, 104, 105); */
+
+  /* [animation bg] 
+  background: linear-gradient(-45deg, #000000, #2020a6, #23a6d5, #ffffff);
+	background-size: 400% 400%;
+  animation: gradient 5s ease infinite;
+  /*  */
+}
+
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+#contenedor{
+  position: relative;
+  left: 50%;
+  transform: translate(-50%);
+  background: rgb(70, 108, 70);
+  /* color: greenyellow; */
+  /* width: 325px; */
+  margin: auto;
+  margin-top: 50px;
+  
+  width: 100%; /*395px*/
+  height: 690px;
+  /* display: flex; */
+
+  /* flex-wrap: wrap; */
+  /* align-content: center; */
+  /* justify-content: center; */
+  /* align-items: center; */
+}
+#leo{
+  position: absolute;
+  top: 620px;
+  right: 1%;
+  /* background: transparent; */
+  color: rgb(0, 0, 0);
+  font-size: 1.5rem ;
+  /* box-shadow: -2px 2px 10px 5px rgba(255, 255, 255, 0.4); */
+  text-shadow: 0px 0px 4px #ffffff;
+}
+
+#timedate { /* Reloj 🕙 */
+  position: absolute;
+  top: 450px;
+  font: small-caps lighter 35px/150% "Segoe UI", Frutiger, "Frutiger Linotype", "Dejavu Sans", "Helvetica Neue", Arial, sans-serif;
+  text-align:left;
+  width: 70%;
+  margin: 40px auto;
+  color:#fff;
+  /* font-weight: bold; */
+  border-left: 2px solid #ed1f24;
+  padding: 20px;
+}
+#mi{ /*sentesimas*/
+  visibility: hidden;
+  color: red;
+  font-size: 2rem;
+}
+
+#custom-button { /* Boton Cargar */
+    position: absolute;  
+    top: 5px;
+    height: 65px;
+    width: 120px;
+    font-size: 1.2rem;
+    /* padding: .1em .1em; */
+    margin-right: -1px;
+    box-shadow: -2px 2px 4px 2px rgba(0, 0, 0, 0.4);
+    /* background: hsl(210, 100%, 56%); */
+    background: linear-gradient(180deg, hsl(233, 100%, 85%),rgb(0, 11, 98), hsl(233, 100%, 85%));
+    color: rgb(255, 255, 255);
+    border-radius: 4px;
+    font-weight: bold;
+    border: 3px solid #000000;
+    border-radius: 10px 10px 10px 10px;
+    
+  }
+  
+  #custom-button:hover {
+    /* background: rgb(68, 160, 253); */
+    background: linear-gradient(180deg, hsl(233, 100%, 85%),hsl(233, 100%, 39%), hsl(233, 100%, 85%));
+  }
+  
+  #custom-text {/* Nombre archivos .txt*/
+    position: absolute;
+    top: 6px;
+    left: 125px;
+    width: 65%;
+    height: 50px;
+    padding: .2em .2em .2em .2em; /*top right bottom left*/
+    /* padding-left: .3em; */
+    font-size: 1.3rem;
+    font-family: sans-serif;
+    color: #ffffff;
+    background: hsl(210, 50%, 60%);
+    font-weight: bold;
+    font-style: oblique;
+    border: 3px solid #000000;
+    border-style:dashed;
+    border-radius: 0 0 0 0;
+    box-shadow: 2px 2px 4px 2px rgba(0, 0, 0, 0.4);
+  }
+  
+  #dropdown { /* Lista desplegable Dropdown*/
+    color: white;
+    color: hsl(0, 0%, 77%);
+    background-color: rgb(255, 255, 255);
+    position: absolute;
+    top: 80px;
+    /* left: 165px; */
+    padding: .4em 1.6em .3em .5em; 
+    left: 1px;
+    font-size: 1.4rem;
+    text-transform: capitalize;
+    width: 71%; /*282px*/
+    height: 50px;
+    margin-top: 5px;
+    margin-left: auto;
+    border: 3px solid #000000;
+    border-radius: 10px 0 0 10px;
+    box-shadow: -2px 2px 4px 2px rgba(0, 0, 0, 0.4);
+    appearance: none; /* Oculta la flechita predeterminada */
+    background: url(down-arrow_2.svg) no-repeat right hsl(0, 0%, 48%);
+    background-size: 35px 25px; /* Cambia el tamaño de la flecha */
+    
+  }
+  
+  
+  #dropdown option { /* estilo lista desplegable(listado) */
+    color: #000000; /* color letras */
+    background-color: rgb(214, 214, 214);
+  }
+
+    
+  #dropdown.has-matches {/*fondo color SI coincide*/
+    background-color: hsl(120, 100%, 30%);
+    /* font-weight: bold; */
+  }
+  
+  #dropdown.no-matches {/*fondo color NO coincide*/
+    background-color: hsla(0, 97%, 40%, 0.7);
+    color:transparent
+    
+  }
+
+  #search-input { /*entrada: buscar...*/
+    position: absolute;
+    top: 2px;
+    left: 142px;
+    margin-top: 160px;
+    /* padding-left: 500px; */
+    padding: 5px;
+    width: 233px;
+    color: rgb(54, 52, 52);
+    border: 3px solid #000000;
+    /* font-style: italic; */
+    font-size: 1.5rem;
+    /* background-color: yellow; */
+    box-shadow: 2px 1px 3px 2px rgba(0, 0, 0, 0.4);
+    text-transform: lowercase; /*todo a minuscula*/
+  }
+
+  #search-input.has-matches {
+    background-color: green;
+    color: white;
+  }
+  
+  #search-input.no-matches {
+    background-color: red;
+    color: white;
+  }
+
+  #search-results { /*cuadro lista resultados buscados*/
+    position: absolute;
+    top: 216px;
+    width: 95%; /*365px*/
+    margin-top: 8px;
+    /* margin-left: 5%; */
+    left: 1%;
+    padding: 5px;
+    text-transform: capitalize;
+    font-size: 1.5rem;
+    font-family: sans-serif;
+    font-weight: 600;
+    color: rgb(0, 0, 0);
+    border: 3px solid #000000;
+    background-color: #dcdcdc;
+    box-shadow: 2px 2px 5px 2px rgb(0, 0, 0);
+    max-height: 160px;
+    overflow-y: auto;
+    /* background: url(Arrows_down_animated_2.gif) no-repeat  #ffffff; */
+    background-size: 60px 60px ; /*Con cover, el color de fondo cubrirá todo el elemento.*/
+    background-position: 98% 10%;
+  }
+
+  
+  /*barra de desplazamiento [chrome]-->>*/
+  #search-results::-webkit-scrollbar {
+    width: 20px; /* Ancho del scrollbar */
+  }
+  #search-results::-webkit-scrollbar-track {
+    background: #f5f5f5; /* Color de la barra de desplazamiento */
+  }
+  #search-results::-webkit-scrollbar-thumb {
+    background: #888888; /* Color del thumb (la barra que se desplaza) */ 
+    border-radius: 10px;
+  }
+  #search-results::-webkit-scrollbar-thumb:hover {
+    background: #555; /* Color del thumb al pasar el mouse */
+  }
+  /*barra de desplazamiento--<<*/
+  
+ 
+  
+  #search-results p {
+    margin: 0;
+    padding: 5px;
+  }
+
+  #buscTexto{ /*buscador label*/
+    position: absolute;
+    top: 152px; /*158px*/
+    width: 96%; /*126px;*/
+    height: 40px; /*34px*/
+    padding-top: 19px;
+    padding-left: 8px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: rgb(255, 255, 255);
+    border: 3px solid #000000;
+    background: hsl(210, 50%, 60%);
+    border-radius: 10px 0 0 10px;
+    box-shadow: 2px 1px 3px 2px rgba(0, 0, 0, 0.4);
+    z-index: -1;
+  }
+  
+  #clear-btn { /* Boton Borrar*/
+    /* background: red; */
+    background: linear-gradient(180deg, hsl(0, 100%, 85%),rgb(146, 0, 0), hsl(0, 100%, 85%));
+    position: absolute;  
+    top: 80px;
+    left: 298px;
+    width: 110px;
+    height: 50px;
+    
+    font-size: 1rem;
+    padding: .5em .4em;
+    font-weight: bold;
+    color: white;
+    
+    margin-top: 5px;
+    padding: 5px 10px;
+    border: 3px solid #000000;
+    border-radius: 0 10px 10px 0;
+    box-shadow: 2px 2px 4px 2px rgba(0, 0, 0, 0.4);
+  }
+
+  
+ 
+@media (max-width:410px) { /*------Estilos para pantallas medianas (tabletas) */
+ 
+   .contenedor{
+     position: relative;
+     left: 50%;
+     transform: translate(-50%);
+     /* background: green; */
+     /* color: greenyellow; */
+     width: 370px;
+     height: 500px;
+   }
+
+   #leo{
+    position: absolute;
+    top: 620px;
+    right: 20px;
+    /* background: transparent; */
+    color: rgb(0, 0, 0);
+    font-size: 1.5rem ;
+    /* box-shadow: -2px 2px 10px 5px rgba(255, 255, 255, 0.4); */
+    text-shadow: 0px 0px 4px #ffffff;
+  }
+  
+  #timedate { /* Reloj 🕙 */
+    position: absolute;
+    top: 450px;
+    font: small-caps lighter 35px/150% "Segoe UI", Frutiger, "Frutiger Linotype", "Dejavu Sans", "Helvetica Neue", Arial, sans-serif;
+    text-align:left;
+    width: 70%;
+    margin: 40px auto;
+    color:#fff;
+    /* font-weight: bold; */
+    border-left: 2px solid #ed1f24;
+    padding: 20px;
+  }
+  
+  
+  #custom-button { /* Boton Cargar */
+      position: absolute;  
+      top: 5px;
+      height: 65px;
+      width: 120px;
+      font-size: 1.2rem;
+      /* padding: .1em .1em; */
+      margin-right: -1px;
+      box-shadow: -2px 2px 4px 2px rgba(0, 0, 0, 0.4);
+      /* background: hsl(210, 100%, 56%); */
+      background: linear-gradient(180deg, hsl(233, 100%, 85%),rgb(0, 11, 98), hsl(233, 100%, 85%));
+      color: rgb(255, 255, 255);
+      border-radius: 4px;
+      font-weight: bold;
+      border: 3px solid #000000;
+      border-radius: 10px 10px 10px 10px;
+      
+    }
+    
+    
+    #custom-text {/* Nombre archivos .txt*/
+      position: absolute;
+      top: 6px;
+      left: 125px;
+      width: 61%;
+      height: 50px;
+      padding: .2em .2em .2em .2em; /*top right bottom left*/
+      /* padding-left: .3em; */
+      font-size: 1rem;
+      font-family: sans-serif;
+      color: #ffffff;
+      background: hsl(210, 50%, 60%);
+      font-weight: bold;
+      font-style: oblique;
+      border: 3px solid #000000;
+      border-style:dashed;
+      border-radius: 0 0 0 0;
+      box-shadow: 2px 2px 4px 2px rgba(0, 0, 0, 0.4);
+    }
+    
+    #dropdown { /* Lista desplegable Dropdown*/
+      color: white;
+      color: hsl(0, 0%, 48%);
+      background-color: rgb(255, 255, 255);
+      position: absolute;
+      top: 80px;
+      /* left: 165px; */
+      padding: .4em .1em .3em .5em; 
+      left: 1px;
+      font-size: 1.4rem;
+      text-transform: capitalize;
+      width: 70%; /*282px*/
+      height: 50px;
+      margin-top: 10px;
+      margin-left: auto;
+      border: 3px solid #000000;
+      border-radius: 10px 0 0 10px;
+      box-shadow: -2px 2px 4px 2px rgba(0, 0, 0, 0.4);
+      appearance: none; /* Oculta la flechita predeterminada */
+      background: url(down-arrow_2.svg) no-repeat right hsl(0, 0%, 48%);
+      background-size: 35px 25px; /* Cambia el tamaño de la flecha */
+      
+    }
+    
+      
+    #search-input { /*entrada: buscar...*/
+      position: absolute;
+      top: 2px;
+      left: 128px;
+      margin-top: 160px;
+      /* padding-left: 500px; */
+      padding: 5px;
+      width: 205px;
+      color: rgb(54, 52, 52);
+      border: 3px solid #000000;
+      /* font-style: italic; */
+      font-size: 1.5rem;
+      /* background-color: yellow; */
+      box-shadow: 2px 1px 3px 2px rgba(0, 0, 0, 0.4);
+      text-transform: lowercase; /*todo a minuscula*/
+    }
+  
+      
+    #search-results { /*cuadro lista resultados buscados*/
+      position: absolute;
+      top: 216px;
+      width: 93%; /*365px*/
+      margin-top: 8px;
+      /* margin-left: 5%; */
+      left: 1px;
+      padding: 5px;
+      text-transform: capitalize;
+      font-size: 1.5rem;
+      color: rgb(0, 0, 0);
+      border: 3px solid #000000;
+      background-color: #dcdcdc;
+      box-shadow: 2px 2px 5px 2px rgb(0, 0, 0);
+      max-height: 160px;
+      overflow-y: auto;
+      /* background: url(Arrows_down_animated_2.gif) no-repeat  #ffffff; */
+      background-size: 60px 60px ; /*Con cover, el color de fondo cubrirá todo el elemento.*/
+      background-position: 98% 10%;
+       
+    }
+    
+    
+    /*barra de desplazamiento--<<*/
+      
+    #buscTexto{ /*buscador label*/
+      position: absolute;
+      top: 152px; /*158px*/
+      width: 350px; /*126px;*/
+      height: 40px; /*34px*/
+      padding-top: 19px;
+      padding-left: 8px;
+      font-size: 1.4rem;
+      font-weight: bold;
+      color: rgb(255, 255, 255);
+      border: 3px solid #000000;
+      background: hsl(210, 50%, 60%);
+      border-radius: 10px 0 0 10px;
+      box-shadow: 2px 1px 3px 2px rgba(0, 0, 0, 0.4);
+      z-index: -1;
+    }
+    
+    #clear-btn { /* Boton Borrar*/
+      /* background: red; */
+      background: linear-gradient(180deg, hsl(0, 100%, 85%),rgb(146, 0, 0), hsl(0, 100%, 85%));
+      position: absolute;  
+      top: 80px;
+      left: 265px;
+      width: 100px;
+      height: 50px;
+      
+      font-size: 1rem;
+      padding: .5em .4em;
+      font-weight: bold;
+      color: white;
+      
+      margin-top: 10px;
+      padding: 5px 10px;
+      border: 3px solid #000000;
+      border-radius: 0 10px 10px 0;
+      box-shadow: 2px 2px 4px 2px rgba(0, 0, 0, 0.4);
+    }
+  
+  
+}
+ 
+ 
+ 
+ 
+ 
+ 
+  @media screen and (max-width: 360px) { /*----------max-width: 360px-------------------pantallas pequeñas--------------------------------*/
+  body{
+   background: grey;
+    /* [animation bg]
+  background: linear-gradient(-45deg, #000000, #2020a6, #23a6d5, #ffffff);
+	background-size: 400% 400%;
+  animation: gradient 25s ease infinite;
+  */
+  }
+  .contenedor{
+    position: relative;
+    left: 52%;
+    transform: translate(-50%);
+    /* background: green; */
+    /* color: greenyellow; */
+    width: 365px;
+    height: 500px;
+  }
+  #timedate { /* Reloj 🕙 */
+    position: absolute;
+    top: 360px;
+    font: small-caps lighter 35px/150% "Segoe UI", Frutiger, "Frutiger Linotype", "Dejavu Sans", "Helvetica Neue", Arial, sans-serif;
+    text-align:left;
+    width: 70%;
+    margin: 40px auto;
+    color:#fff;
+    /* font-weight: bold; */
+    border-left: 2px solid #ed1f24;
+    padding: 20px;
+  }
+  
+  #custom-text {/* Nombre archivos .txt*/
+    position: absolute;
+    top: 7px;
+    left: 147px;
+    width: 194px;
+    height: 42px;
+    padding: .4em .1em .3em .3em; 
+    /* padding-left: .3em; */
+    font-size: 1.1rem;
+    font-family: sans-serif;
+    color: #ffffff;
+    background: hsl(210, 50%, 60%);
+    font-weight: bold;
+    font-style: oblique;
+    border: 3px solid #000000;
+    border-radius: 0 10px 10px 0;
+    box-shadow: 2px 2px 4px 2px rgba(0, 0, 0, 0.4);
+  }
+
+  #dropdown { /* Lista desplegable Dropdown*/
+    position: absolute;
+    top: 65px;
+    /* left: 165px; */
+    font-size: 1.1rem;
+    width: 269px;
+    height: 42px;
+    margin-top: 10px;
+    border: 2px solid #000000;
+    border-radius: 10px 0 0 10px;
+    box-shadow: -2px 2px 4px 2px rgba(0, 0, 0, 0.4);
+  }
+
+  #clear-btn { /* Boton Borrar*/
+    /* background: red; */
+    background: linear-gradient(180deg, hsl(0, 100%, 85%),rgb(146, 0, 0), hsl(0, 100%, 85%));
+    position: absolute;  
+    top: 65px;
+    left: 270px;
+    width: 85px;
+    height: 42px;
+    
+    font-size: .8rem;
+    padding: 1rem;
+    margin-top: 1px;
+    font-weight: bold;
+    color: white;
+    
+    margin-top: 10px;
+    padding: 5px 10px;
+    border: 2px solid #000000;
+    border-radius: 0 10px 10px 0;
+    box-shadow: 2px 2px 4px 2px rgba(0, 0, 0, 0.4);
+  }
+}
