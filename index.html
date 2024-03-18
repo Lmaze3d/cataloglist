@@ -1,0 +1,43 @@
+        <!-- Claude 3 Sonnet --POE.com-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body onLoad="initClock()">
+    
+<div class="contenedor">
+    
+    <input type="file" id="real-file" accept=".txt" hidden="hidden" />
+    <button type="button" id="custom-button">CARGAR LISTA TXT</button>
+    <span id="custom-text">Lista no cargada.</span>
+    
+    <!-- [Agregados] -->
+    <select id="dropdown" ></select>
+    <button id="clear-btn">Borrar Lista</button>
+    <input type="text" id="search-input" placeholder="Buscar aqui...">
+    <div id="search-results"></div> <!-- recuadro lista resultados -->
+    <div id="buscTexto">Buscador:</div>
+    <a id="leo">@leo</a>
+    <div id="timedate">
+        
+        <a id="day">Monday</a>
+        <a id="d">1</a>.
+        <a id="mon">January</a>
+        <a id="y">0</a>.<br />
+        <a id="h">12</a> :
+        <a id="m">00</a>:
+        <a id="s">00</a>
+        <a id="mi">000</a>
+        
+      </div>
+      
+      
+</div>
+
+    <script src="temp_script.js"></script>
+</body>
+</html>
