@@ -220,6 +220,14 @@ body{
   }
 
   
+  #search-results div:nth-child(even) { /*lista intercalada(par) cuadro resultados*/
+    background-color: hsl(0, 0%, 65%);
+  }
+
+  #search-results div:nth-child(odd) { /*lista intercalada(inpar) cuadro resultados*/
+    background-color: hsl(0, 0%, 80%);
+  }
+
   /*barra de desplazamiento [chrome]-->>*/
   #search-results::-webkit-scrollbar {
     width: 20px; /* Ancho del scrollbar */
