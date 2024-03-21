@@ -115,7 +115,7 @@ body{
     height: 50px;
     padding: .2em .2em .2em .2em; /*top right bottom left*/
     /* padding-left: .3em; */
-    font-size: 1.3rem;
+    font-size: 1rem;
     font-family: sans-serif;
     color: #ffffff;
     background: hsl(210, 50%, 60%);
